@@ -1,0 +1,14 @@
+# CLI 옵션은 이 설정을 덮어씁니다. 시간 단위는 ms입니다.
+mode: cli
+target-server-url: http://localhost:8080/
+error-types:
+  - socket-close
+  - invalid-initial-line
+  - initial-line-wait
+  - invalid-header
+  - content-length-short
+  - content-length-long
+delay: 1000
+max-timeout: 5000
+connect-timeout: 3000
+socket-close-delay: 1000
