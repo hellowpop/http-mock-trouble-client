@@ -9,7 +9,7 @@ Maven + SnakeYAML을 선택한다. Spring Boot는 이 도구의 CLI/Swing 구조
 
 ## 구현 계획
 
-직접 구현하고 각 단계의 테스트를 먼저 실행한다. 기술 문서는 이 파일에서 관리한다.
+직접 구현하고 각 단계의 테스트를 먼저 실행한다. 구조와 변경 이력은 이 파일에서, 사용법과 사용자 대상 기술 설명은 [README.md](README.md)에서 관리한다.
 
 - [x] 설정: `ClientConfig`, `ConfigLoader`, `ErrorType`. YAML → CLI 우선순위, 순서 보존, 기본값 및 잘못된 입력 검증 테스트 후 구현.
 - [x] 소켓 실행: `ScenarioRunner`, `CaseResult`, `RunEvent`. 로컬 TCP 서버로 6개 요청 바이트, EOF, 오류 응답, 무응답/부분 응답/지속 응답의 전체 deadline 테스트 후 구현.
@@ -35,6 +35,8 @@ Git 저장소: [hellowpop/http-mock-trouble-client](https://github.com/hellowpop
 
 ```text
 pom.xml                            Java 21 컴파일 및 의존성 포함 실행 JAR
+README.md                          빌드/실행/설정/결과 해석과 사용자 기술 설명
+project.md                         설계/프로젝트 구조/검증 기록과 변경 이력
 config/example.yml                 설정 예제
 src/main/java/io/github/httpmock/
   Main.java                        도움말, 설정, CLI/Swing 진입점
@@ -150,3 +152,4 @@ Swing은 선택 행 1개 또는 전체 행을 실행한다. 실행 중 재실행
 - 2026-10-08: 리뷰 후 최종 HTTP 응답 처리와 Unicode URL percent encoding 수정, 회귀 테스트 2개 추가. CLI 출력 인코딩을 UTF-8로 고정.
 - 2026-10-09: 실행 JAR 및 Swing 전체 실행 smoke 완료. 최종 구조, 설정/실행 방법과 검증 결과 기록.
 - 2026-10-09: 제공된 GitHub 저장소를 `origin`으로 연결. 원격이 비어 있음을 확인하고 `master` 최초 커밋/푸시를 위해 기술 문서를 갱신.
+- 2026-10-09: `develop`에서 `README.md` 추가. 빌드와 배포, CLI/Swing 사용법, YAML/옵션, 시나리오와 종료 코드, 기술 설명 및 문제 해결을 정리하고 문서 역할을 구분.
